@@ -1,0 +1,7 @@
+interface:
+  display_name: "中文文献综述写作"
+  short_description: "按题目检索筛选论文并撰写中文文献综述，避免空话和乱下定义"
+  default_prompt: "Use $zh-literature-review-writer to find, screen, and draft a Chinese literature review section for the topic ..."
+
+policy:
+  allow_implicit_invocation: true
