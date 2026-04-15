@@ -1,48 +1,50 @@
 # zh-literature-review-writer
 
-A Codex skill for finding, screening, drafting, and revising Chinese literature review sections in a problem-driven style.
+一个面向中文学术写作的 Codex skill，用于检索、筛选、撰写和改写文献综述、研究现状与 related work。
 
-## What This Skill Does
+## 这个 skill 能做什么
 
-This skill is designed for tasks such as:
+它适合处理这类任务：
 
-- Writing Chinese literature reviews
-- Drafting `国内外研究现状`
-- Organizing `related work`
-- Screening papers by relevance before writing
-- Rewriting existing review sections to reduce filler and improve topic focus
+- 撰写中文文献综述
+- 整理`国内外研究现状`
+- 撰写`相关研究`
+- 在正式写作前先筛选论文
+- 改写已有综述，使内容更聚焦问题、减少空话
 
-Compared with generic literature-review prompts, this skill emphasizes:
+和通用提示词相比，这个 skill 更强调：
 
-- staying close to the user's exact topic
-- filtering papers by actual relevance instead of keyword overlap
-- explaining what each paper did and what problem it solved
-- ending with a concrete research gap that supports the user's method choice
-- reducing empty praise, inflated conclusions, and "AI-like" filler
+- 紧扣用户的具体研究主题，不随意跑题
+- 不是按关键词堆论文，而是按真实相关性筛选
+- 每篇论文都围绕“做了什么、解决了什么问题、还剩什么不足”来组织
+- 最后落到一个能支撑用户方法选择的具体研究缺口
+- 尽量减少空泛总结、拔高式表述和明显的 AI 痕迹
 
-## Best Use Cases
+## 适用场景
 
-Use this skill when you want help with:
+当你想让 Codex 帮你处理下面这些事情时，可以用这个 skill：
 
 - `文献综述`
 - `研究现状`
 - `国内外研究进展`
 - `相关研究`
-- screening a paper list before writing
-- turning a topic into a Chinese academic narrative
+- `先筛论文，再动笔`
+- `改写一段已经写好的综述`
 
-It is especially useful for:
+它尤其适合：
 
-- graduation theses
-- proposals
-- research reports
-- related-work sections in academic papers
+- 本科毕业论文
+- 硕博论文开题或正文
+- 研究计划书
+- 学术论文里的 related work 部分
 
-## Repository Structure
+## 仓库结构
 
 ```text
 zh-literature-review-writer/
 ├─ SKILL.md
+├─ README.md
+├─ LICENSE
 ├─ agents/
 │  └─ openai.yaml
 └─ references/
@@ -52,83 +54,83 @@ zh-literature-review-writer/
    └─ writing-template.md
 ```
 
-## Installation
+## 安装方式
 
-### Option 1: Manual Install
+### 方式一：手动安装
 
-If you use local Codex skills, copy this folder into your local skills directory and keep the folder name as `zh-literature-review-writer`.
+如果你本地使用 Codex skills，直接把整个文件夹复制到本地 skills 目录即可，并保留目录名为 `zh-literature-review-writer`。
 
-Typical local target:
+常见目标路径示例：
 
 ```powershell
-C:\Users\<YourName>\.codex\skills\zh-literature-review-writer
+C:\Users\<你的用户名>\.codex\skills\zh-literature-review-writer
 ```
 
-### Option 2: Install with Skills CLI
+### 方式二：通过 Skills CLI 安装
 
-If your environment supports the Skills CLI, you can try:
+如果你的环境支持 Skills CLI，可以尝试：
 
 ```bash
 npx skills add 134Chen/zh-literature-review-writer -g -y
 ```
 
-If your setup expects a different install format, use the manual install method above.
+如果你的环境安装方式不同，优先使用上面的手动安装。
 
-## How to Trigger It
+## 怎么触发这个 skill
 
-This skill is intended for requests like:
+它适合这类中文请求：
 
-- `帮我写一段关于软测量的中文文献综述`
+- `帮我写一段关于工业过程软测量的中文文献综述`
 - `根据这些论文整理国内外研究现状`
-- `先筛选这些文献，再写相关研究`
-- `把这段文献综述改得更聚焦问题，不要空话`
+- `先把这些文献分成 strong / medium / weak / exclude，再决定怎么写`
+- `把这段相关研究改得更聚焦问题，不要空话`
 
-You can also invoke it more explicitly:
+也可以更明确地调用：
 
 ```text
 Use $zh-literature-review-writer to find, screen, and draft a Chinese literature review section for the topic ...
 ```
 
-## Example Requests
+## 使用示例
 
-### Example 1: Write from a Topic
+### 示例 1：从主题直接生成综述
 
 ```text
-请用 zh-literature-review-writer 帮我写“面向工业过程软测量的多工况建模”相关的中文文献综述，
+请用 zh-literature-review-writer 帮我写“面向工业过程软测量的多工况建模”相关的中文文献综述。
 先给出检索重点和筛选标准，再输出国外研究现状、国内研究现状和总结。
 ```
 
-### Example 2: Screen Papers First
+### 示例 2：先筛文献，再决定写法
 
 ```text
 下面是我整理的一批论文，请先按 strong / medium / weak / exclude 分类，
-说明每篇为什么保留或排除，然后再决定是否值得写成文献综述。
+并说明每篇为什么保留或排除，然后再给出适合写成文献综述的组织方式。
 ```
 
-### Example 3: Rewrite an Existing Draft
+### 示例 3：改写已有研究现状
 
 ```text
 这是一段我已经写好的研究现状，请帮我改写。
 要求保留事实和引用，不要堆方法名，不要写空泛总结，
-最后要自然落到我的研究切入点上。
+最后自然落到我的研究切入点上。
 ```
 
-## Output Style
+## 这个 skill 的写作倾向
 
-This skill tends to:
+默认会尽量做到：
 
-- keep the topic tight
-- avoid drifting into unrelated broad background
-- prefer fewer but more relevant papers
-- explain papers through problem, method, and limitation
-- end with a concrete gap statement instead of a slogan
+- 主题收得紧
+- 少写与主题关系不大的宽泛背景
+- 优先保留强相关论文，而不是数量看起来很多的论文
+- 先写问题，再写方法和改进点
+- 用具体缺口收尾，而不是用口号式总结收尾
 
-## Notes
+## 使用建议
 
-- This skill is optimized for Chinese academic writing.
-- It works best when the user provides a clear topic, object, task, or paper list.
-- It is not meant for broad, unfocused surveys full of loosely related papers.
+- 用户如果能提供更明确的研究对象、任务、变量或论文列表，效果会更好。
+- 这个 skill 更适合问题驱动、主题集中的文献综述，不适合特别发散的大而全式综述。
+- 如果已经有现成论文清单，建议先让它筛选，再开始正式写作。
 
-## License
+## 许可证
 
-No license file is included yet. Add one if you want others to reuse or modify the repository under explicit terms.
+本仓库当前使用 MIT License，你可以自由使用、修改、分发，并用于商业场景，但需保留原始版权和许可声明。
