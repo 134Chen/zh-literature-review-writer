@@ -1,6 +1,6 @@
 ---
 name: zh-literature-review-writer
-description: Find, screen, write, or revise Chinese literature reviews, research-status chapters, domestic and foreign research progress summaries, and related work. Use when the user asks for 文献综述, 研究现状, 国内外研究进展, 相关研究, related work, or a Chinese academic synthesis of topic-specific papers.
+description: Find, screen, write, or revise Chinese literature review sections, research status chapters, domestic/foreign research progress summaries, and related work. Use when the user asks for 文献综述, 研究现状, 国内外研究进展, 相关研究, related work, or wants papers for a specific topic to be searched, filtered by relevance, and reorganized into a Chinese academic narrative. First lock the topic, object, and core research problem; search close to that topic; classify papers into strong, medium, weak, or exclude; keep only papers that directly serve the topic, method chain, or unresolved contradiction; organize each kept paper around what it did and what practical problem it solved, or what limitation remained and which later work improved it; avoid unsupported stage claims, inflated conclusions, and empty filler; and end with a concrete gap statement that supports the user's method choice.
 ---
 
 # Zh Literature Review Writer
@@ -13,7 +13,6 @@ Aim for three qualities at the same time:
 
 - Tight topic focus
 - Low filler and low "AI feel"
-- Concrete paper-level content rather than abstract summary verbs
 - A final gap statement that genuinely supports the user's method choice
 
 ## Workflow
@@ -63,34 +62,11 @@ Inside each part, use chronological or technical evolution only when it helps ex
 
 For each cited work, prefer this order:
 
-1. What concrete object, material, case, corpus, platform, event, group, or mechanism it studied
-2. What it actually did to that object, such as conceptual definition, case analysis, survey, framework construction, comparative analysis, mechanism explanation, discourse analysis, or empirical test
-3. What practical problem, explanatory gap, or limitation it addressed
-4. If "practical problem" is not the right emphasis, replace it with what limitation remained and which later work improved it
+1. It did what
+2. It solved what practical problem
+3. If "practical problem" is not the right emphasis, replace it with what limitation remained and which later work improved it
 
 Keep the conclusion concrete. State what was improved and in relation to what object, such as noise, delay, nonlinearity, variable coupling, sample size, operating-condition shift, or interpretability.
-
-When rewriting a review paragraph, do not stop at "A discussed X" or "B enriched the perspective on Y". Push one level deeper and state the paper's actual content. In practice, each kept citation should answer at least two of the following:
-
-- what object it studied
-- what material, case, sample, platform, event, or corpus it used
-- what question or mechanism it focused on
-- what analytical path or argument it adopted
-- what concrete finding, contribution, or remaining limitation it produced
-
-If the available source only supports a coarse summary, stay at the highest verified specificity and do not invent details. In that case, explicitly write it as a background, overview, or macro discussion rather than pretending it contains fine-grained evidence.
-
-Minimum execution rule for each kept citation:
-
-- By default, each kept citation in the final prose must contain at least two slots:
-  1. an object slot: what object, case, platform, event, group, corpus, or mechanism the paper studied
-  2. a content slot: what the paper actually did, found, explained, compared, constructed, tested, or what specific issue it addressed
-- If the paper is especially important to the review, prefer three slots:
-  1. object
-  2. action or analytical path
-  3. problem addressed, finding, or remaining limitation
-- If a sentence cannot satisfy at least "object + content", do not treat that citation as already written. Rewrite it until the reader can answer "this paper looked at what, and specifically did what."
-- The only exception is a genuine macro background or overview paper whose available source does not support finer detail. In that case, mark it explicitly as background, overview, or policy-level discussion rather than letting it masquerade as a concrete study.
 
 ### 5. Close with a concrete method gap
 
@@ -115,7 +91,6 @@ For each kept paper, briefly note:
 
 - why it is relevant
 - what role it will play in the review
-- what concrete content from the paper should appear in the final prose
 - whether it supports the topic directly or only supports the method chain
 
 ## Hard Rules
@@ -123,11 +98,6 @@ For each kept paper, briefly note:
 - Do not write a "author + method name"流水账.
 - Do not mistake keyword overlap for topic relevance.
 - Do not only say a paper proposed a method without saying what issue it addressed.
-- Do not count a citation as "covered" if the sentence fails the minimum "object + content" rule.
-- Do not summarize a paper only with abstract verbs such as "discussed", "analyzed", "explained", "enriched the perspective", or "provided support" unless the sentence immediately states what object, material, case, mechanism, or question that paper actually handled.
-- Do not group several citations behind one vague clause if their research objects or contributions are different. Split them when needed so the reader can see what each paper actually did.
-- Do not rewrite a literature review into broad labels like "macro background", "platform mechanism", or "social interaction" unless the sentence also states the concrete content that justifies that label.
-- Do not present background or overview papers as if they had completed fine-grained event-level, mechanism-level, or causal analysis.
 - Do not make unsupported claims such as "this proves the field has entered a mature stage" or "this marks a new stage" unless the source itself clearly supports that judgment.
 - Do not exaggerate a paper's conclusion beyond its actual scope.
 - Do not pad the review with empty phrases such as "has important significance", "greatly promoted development", "shows broad prospects", or "provides a new idea" without a concrete object.
@@ -145,14 +115,115 @@ For each kept paper, briefly note:
 - Prefer concrete nouns and concrete problems over abstract praise.
 - Let the "innovation rationale" land on a contradiction, not on a slogan.
 
-## Final Self-Check
+## Low-AI Chinese Literature Review Method
 
-Before finalizing a review paragraph or rewrite, quickly check:
+Use this section when the user asks for prose that is "不像 AI", has failed AIGC checks, or needs a thesis literature-review section to sound more like a human researcher wrote it.
 
-- Does each kept citation state at least "what it studied" and "what it concretely did"?
-- If several citations are grouped together, can the reader still tell them apart by object or contribution?
-- Are background papers clearly written as background rather than dressed up as detailed evidence?
-- Does the gap statement follow from the reviewed papers' concrete limitations rather than from generic claims?
+### Core Move
+
+Do not polish a literature review by adding more smooth transitions. Rebuild each paragraph around the concrete research chain:
+
+`research object -> data or condition -> method used -> problem addressed -> remaining boundary -> relation to this study`
+
+The paragraph does not need all six parts every time, but at least three must be concrete. If a paragraph only contains broad field labels, method names, and praise words, it will read like generated text.
+
+### Replace Template Review Rhythm
+
+Avoid repeating the same skeleton:
+
+- `近年来，随着...的发展，...受到广泛关注。`
+- `某某提出了...方法，取得了较好效果。`
+- `该研究为...提供了参考。`
+- `综上，现有研究已经取得丰富成果，但仍存在不足。`
+
+Prefer writing from the actual research object:
+
+- `钻机运行曲线需要先转换成工况标签，孔深累计才有阶段边界。已有研究通常从转速、钻压、泵压和深度中提取特征，用于识别钻进、循环、起下钻和静止等状态。`
+- `原始高频文件中的毛刺会放大差分结果。稳健统计研究中，中位数和MAD常用于削弱短时极端值对局部趋势判断的影响。`
+
+### Citation Sentence Discipline
+
+- Keep one citation sentence focused on one paper or one tightly related claim.
+- Avoid stacking many citations after a generic claim. If several papers are cited together, first say what they share, then give one concrete difference in the next sentence.
+- Do not put a citation on a sentence that merely says `研究较多`, `发展较快`, `应用广泛`, or `具有重要意义`.
+- If the user's school requires one reference per sentence, keep that rule even while rewriting for fluency.
+
+### Human-Like Paragraph Construction
+
+For a review paragraph:
+
+1. Start with the research problem or data condition, not a grand field background.
+2. Introduce papers by what they actually did, not only by the method name.
+3. Use method names only when they explain the technical route.
+4. Put limitations in concrete terms: sample size, noise, delay, operating-condition shift, sensor placement, weak labels, interpretability, field deployment, or unit mismatch.
+5. End with the user's need only when the connection is real. Avoid every paragraph ending with `为本文研究提供基础`.
+
+Good paragraph rhythm can be uneven. One sentence can be data-heavy, the next can explain the boundary. Do not make every sentence the same length or every paragraph the same shape.
+
+### Engineering Thesis Review Voice
+
+For engineering, equipment, software platform, data acquisition, measurement, and algorithm chapters:
+
+- Write from the field chain and data chain. Mention sensors, signals, files, windows, variables, units, stages, and results when they matter.
+- Prefer `转速、钻压、泵压和深度变量用于识别钻进、循环和静止状态` over `多源数据技术推动了智能钻井发展`.
+- When reviewing algorithms, explain why the method matches the data problem. For example, use `MAD适合处理短时尖峰` instead of `MAD具有良好的鲁棒性`.
+- When reviewing software or platform work, connect architecture to data flow, not to broad informatization claims.
+
+### Anti-Detection Revision Pass
+
+After drafting or revising, run this pass:
+
+- Remove opening phrases that could be deleted without changing meaning.
+- Search for repeated endings such as `提供参考`, `奠定基础`, `提供支撑`, `具有重要意义`.
+- Search for connector clusters: `此外`, `同时`, `进一步`, `因此`, `综上`.
+- Search for turn-based contrast frames: `不是...而是`, `不仅...而且`, `不在于...而在于`.
+- Search for paragraphs where every sentence begins with `某某等`.
+- Replace broad nouns such as `体系`, `平台`, `能力`, `水平`, `价值`, `意义` with concrete objects when possible.
+- If a paragraph remains too close to a previous version or detection snippet, change the sentence order and subject focus instead of swapping synonyms.
+
+### Sub-10 AIGC Pass for Review and Thesis Sections
+
+Use this pass when a Chinese thesis or review section has already been reduced but the detector still reports around 10%-13%.
+
+- First compare repeated reports. If the same paragraphs are repeatedly flagged while total rate moves only slightly, treat the task as a convergence pass rather than a full rewrite.
+- Do not broaden the review or add unrelated citations to dilute the score. Extra generic literature often raises the AI feel.
+- For each repeated paragraph, change its job:
+  - from `field background` to `specific data condition`;
+  - from `paper list` to `what problem each paper handled`;
+  - from `method praise` to `why the method matched the data problem`;
+  - from `gap slogan` to `which sensor, sample, operating condition, label, or deployment issue remains`;
+  - from `therefore this study...` to `this study needs this boundary because...`.
+- Keep one paragraph as one paragraph when Word structure must be preserved. Rewrite the internal order instead of splitting it.
+- If a paragraph is mostly formulas, variables, or result statistics, keep the numbers and units. Move the explanation from generic mathematical language to variable source, data window, and engineering meaning.
+- When a report is already below 10%, rewrite the remaining matched paragraphs once more only for margin. Do not remove citations, tables, formulas, or result values.
+
+### Low-AI Sentence Moves
+
+Use these moves for stubborn review paragraphs:
+
+- Start with the measurement or data problem, not the field trend.
+- Put the cited work after the problem sentence, not before every sentence as `某某等`.
+- Use fewer summary verbs: `提出`, `构建`, `实现`, `验证`, `表明`. Replace them with the actual operation, such as `用转速和钻压窗口识别钻进段` or `用中位数削弱单点尖峰`.
+- Avoid ending several paragraphs with `为本文提供参考/基础/支撑`. End with a concrete boundary or need.
+- Keep some unevenness. A human review can have one short boundary sentence after a longer technical sentence.
+
+### Before/After Pattern
+
+Weak:
+
+`国内外学者对智能钻井工况识别进行了大量研究，提出了多种机器学习和深度学习方法，取得了良好效果，为本文研究提供了理论基础。`
+
+Stronger:
+
+`钻机工况识别通常依赖转速、钻压、泵压和深度等时序变量。已有研究把这些变量用于识别钻进、循环、起下钻和静止等状态，解决的是连续曲线与现场动作之间的对应问题。本文后续的阶段识别和孔深累计也需要先确定这一边界。`
+
+Weak:
+
+`异常检测方法能够有效提高数据质量，因此被广泛应用于工业数据处理中。`
+
+Stronger:
+
+`高频采集文件中的单点尖峰会直接影响差分结果。中位数和MAD一类稳健统计量适合先削弱这类短时极端值，再进入阶段识别。`
 
 ## Use These References
 
