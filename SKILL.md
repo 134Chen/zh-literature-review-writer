@@ -114,6 +114,9 @@ For each kept paper, briefly note:
 - Keep transitions natural and restrained.
 - Prefer concrete nouns and concrete problems over abstract praise.
 - Let the "innovation rationale" land on a contradiction, not on a slogan.
+- For Chinese journal manuscripts, prefer a synthesized review paragraph: classify papers by research line, method link, or unresolved problem before naming individual authors.
+- Keep each literature sentence tied to one author team or one named document. Use an uncited topic sentence to group a research direction, then give each author team its own sentence.
+- Do not combine several author teams into one sentence with commas, enumeration punctuation, `分别`, or `等研究了`. Joint authors of the same cited paper count as one author team.
 
 ## Low-AI Chinese Literature Review Method
 
@@ -143,10 +146,26 @@ Prefer writing from the actual research object:
 
 ### Citation Sentence Discipline
 
-- Keep one citation sentence focused on one paper or one tightly related claim.
-- Avoid stacking many citations after a generic claim. If several papers are cited together, first say what they share, then give one concrete difference in the next sentence.
+- Keep one citation sentence focused on one paper, one author team, or one named document.
+- Avoid stacking many citations after a generic claim. If several papers belong to the same direction, introduce that direction in a separate topic sentence, then write one sentence for each representative author team or document.
 - Do not put a citation on a sentence that merely says `研究较多`, `发展较快`, `应用广泛`, or `具有重要意义`.
 - If the user's school requires one reference per sentence, keep that rule even while rewriting for fluency.
+- Do not place a multi-reference cluster after several unrelated names, policies, or claims. If a sentence mentions distinct authors or documents, attach each citation to the specific author, document, or claim.
+- Multi-reference clusters such as `[6-8]` should be avoided in Chinese journal prose unless the user explicitly asks for compressed citation style. Write `Xiao和Wang[6]...。Jiang等[7]...。Zhang等[8]...。`, with one author team in each sentence.
+- For policy and background sources, avoid a terminal cluster such as `政策背景[15-18]`; instead write the common policy line first, then separate different policy or empirical sources if they support different points.
+
+### Chinese Journal Synthesis Paragraphs
+
+Use this pattern when rewriting a single literature-review paragraph for Chinese journals:
+
+1. Start with the research chain or practical problem, not with a list of authors. For example: `公共体育设施低碳可达性评价涉及设施供给、交通网络和出行替代三个环节`.
+2. Group close papers at the paragraph level, not inside one citation sentence. A useful paragraph rhythm is `方向主题句 -> 作者A单独一句 -> 作者B单独一句 -> 作者C单独一句 -> 小结句`.
+3. In a journal-style single paragraph, keep one author team or one named document in each sentence. For example: `在体育设施领域，相关研究主要关注服务覆盖和空间配置。Xiao和Wang[6]测算了社区体育设施服务可达性。Jiang等[7]比较了街道尺度的全民健身资源配置。Zhang等[8]解释了全国公共体育场馆的分布特征。`
+4. Do not write `A[1]、B[2]、C[3]等研究了...` or `A[1]认为...，B[2]则指出...`. Rewrite them as separate sentences, even when the papers belong to the same direction or reach related conclusions.
+5. Use single citations for distinct policy files, distinct named findings, or different claims. Do not write `政策背景[15-18]`; write the policy file and each empirical direction separately if they support different points.
+6. When the user provides a target journal example, preserve that example's review logic: classify the literature first, cite by group where justified, then use `总体来看/综上` to state the exact unresolved issue and the present study's method route.
+7. Close with a concrete gap that points to the user's method chain, such as `仍缺少把设施供需、低碳交通条件和可替代小汽车里程连续衔接的测算框架`.
+8. Keep a requested single paragraph as one paragraph, but use sentence boundaries to separate author teams. One-author-team-per-sentence does not require splitting the paragraph into multiple paragraphs.
 
 ### Human-Like Paragraph Construction
 

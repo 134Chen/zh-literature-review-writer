@@ -30,6 +30,13 @@ If any sentence stops serving these five items, cut it.
 
 ## Per-Paper Sentence Patterns
 
+### Sentence Ownership Rule
+
+- One sentence may describe only one cited paper, one author team, or one named document.
+- Joint authors of the same paper count as one author team.
+- When several papers share a direction, write a direction-level topic sentence first, then give each author team a separate sentence.
+- Do not combine different teams with `、`, `分别`, or `等研究了` in the same sentence.
+
 ### Pattern A: Do what + solve what problem
 
 `[作者]围绕[对象/任务]，采用[方法]建立[模型/框架]，主要针对[实际问题]展开研究。`

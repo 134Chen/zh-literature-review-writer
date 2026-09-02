@@ -19,6 +19,7 @@ Use this checklist before finalizing a literature review section.
 ## Paper-Level Writing
 
 - Does each paper say what it did?
+- Does each literature sentence contain no more than one author team or one named document?
 - Does each paper say what practical problem it solved?
 - If "practical problem" is not the best framing, does it instead say what limitation remained and which later work improved it?
 - Have you avoided reducing papers to "author + method name"?
